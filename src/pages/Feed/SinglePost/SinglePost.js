@@ -23,11 +23,11 @@ class SinglePost extends Component {
       })
       .then(resData => {
         this.setState({
-          title: resData.post.title,
-          author: resData.post.creator.name,
-          image: 'http://localhost:8080/' + resData.post.imageUrl,
-          date: new Date(resData.post.createdAt).toLocaleDateString('en-US'),
-          content: resData.post.content
+          title: resData.title,
+          author: resData.creator.name,
+          image: 'http://localhost:8080/' + resData.imageUrl,
+          date: new Date(resData.createdAt).toLocaleDateString('en-US'),
+          content: resData.content
         });
       })
       .catch(err => {
